@@ -1,0 +1,251 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: Fraunces, serif;
+    --font-body: GeneralSans, sans-serif;
+    --font-mono: GeistMono, monospace;
+    --radius: 1rem;
+
+    --background: 0.06 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.18 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.6 0.24 79.2;
+    --primary-foreground: 0.12 0 0;
+
+    --secondary: 0.15 0 0;
+    --secondary-foreground: 0.9 0 0;
+    --muted: 0.25 0 0;
+    --muted-foreground: 0.65 0 0;
+
+    --accent: 0.6 0.24 79.2;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.95 0 0;
+
+    --border: 0.2 0.08 79.2;
+    --input: 0.18 0 0;
+    --ring: 0.6 0.24 79.2;
+
+    --chart-1: 0.65 0.22 40;
+    --chart-2: 0.6 0.12 185;
+    --chart-3: 0.4 0.07 227;
+    --chart-4: 0.83 0.19 84;
+    --chart-5: 0.77 0.19 70;
+
+    --sidebar: 0.12 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.6 0.24 79.2;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.25 0 0;
+    --sidebar-accent-foreground: 0.9 0 0;
+    --sidebar-border: 0.2 0.08 79.2;
+    --sidebar-ring: 0.6 0.24 79.2;
+
+    --glass-bg: oklch(0.12 0 0 / 0.5);
+    --glass-border: oklch(0.6 0.24 79.2 / 0.2);
+    --gradient-gold: linear-gradient(
+      135deg,
+      oklch(0.6 0.24 79.2 / 0.3),
+      oklch(0.6 0.24 79.2 / 0.05)
+    );
+  }
+
+  .dark {
+    --background: 0.06 0 0;
+    --foreground: 0.95 0 0;
+    --card: 0.12 0 0;
+    --card-foreground: 0.95 0 0;
+    --popover: 0.18 0 0;
+    --popover-foreground: 0.95 0 0;
+
+    --primary: 0.6 0.24 79.2;
+    --primary-foreground: 0.06 0 0;
+
+    --secondary: 0.15 0 0;
+    --secondary-foreground: 0.9 0 0;
+    --muted: 0.25 0 0;
+    --muted-foreground: 0.65 0 0;
+
+    --accent: 0.6 0.24 79.2;
+    --accent-foreground: 0.06 0 0;
+
+    --destructive: 0.65 0.19 22;
+    --destructive-foreground: 0.95 0 0;
+
+    --border: 0.2 0.08 79.2;
+    --input: 0.18 0 0;
+    --ring: 0.6 0.24 79.2;
+
+    --chart-1: 0.49 0.24 264;
+    --chart-2: 0.7 0.17 162;
+    --chart-3: 0.77 0.19 70;
+    --chart-4: 0.63 0.27 304;
+    --chart-5: 0.65 0.25 16;
+
+    --sidebar: 0.12 0 0;
+    --sidebar-foreground: 0.95 0 0;
+    --sidebar-primary: 0.6 0.24 79.2;
+    --sidebar-primary-foreground: 0.06 0 0;
+    --sidebar-accent: 0.25 0 0;
+    --sidebar-accent-foreground: 0.9 0 0;
+    --sidebar-border: 0.2 0.08 79.2;
+    --sidebar-ring: 0.6 0.24 79.2;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeneralSans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GeistMono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Glass effect utilities */
+  .glass-card {
+    @apply backdrop-blur-xl bg-opacity-50 border border-border;
+    background: var(--glass-bg);
+    border-color: var(--glass-border);
+  }
+
+  /* Gold text glow */
+  .text-gold-glow {
+    @apply text-primary;
+    text-shadow: 0 0 20px oklch(0.6 0.24 79.2 / 0.5);
+  }
+
+  /* Subtle gold gradient */
+  .gradient-gold-subtle {
+    background: var(--gradient-gold);
+  }
+
+  /* Cursor ring effect class for JS */
+  .cursor-ring {
+    @apply fixed w-8 h-8 border-2 border-primary rounded-full pointer-events-none z-50;
+    box-shadow: 0 0 15px oklch(0.6 0.24 79.2 / 0.5);
+  }
+
+  /* Smooth scroll anchor links */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
+
+  /* Letter spacing for luxury */
+  .tracking-wider-luxury {
+    letter-spacing: 0.15em;
+  }
+
+  /* Perfume section gradient backgrounds */
+  .bg-jasmine-bloom {
+    background: linear-gradient(
+      135deg,
+      oklch(0.15 0.02 60) 0%,
+      oklch(0.2 0.05 70) 100%
+    );
+  }
+
+  .bg-rose-royal {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.08 15) 0%,
+      oklch(0.22 0.1 20) 100%
+    );
+  }
+
+  .bg-ocean-mist {
+    background: linear-gradient(
+      135deg,
+      oklch(0.16 0.1 250) 0%,
+      oklch(0.2 0.08 260) 100%
+    );
+  }
+
+  .bg-oud-mystery {
+    background: linear-gradient(
+      135deg,
+      oklch(0.1 0.02 30) 0%,
+      oklch(0.14 0.04 35) 100%
+    );
+  }
+
+  .bg-citrus-burst {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.12 120) 0%,
+      oklch(0.22 0.15 110) 100%
+    );
+  }
+
+  .bg-vanilla-dream {
+    background: linear-gradient(
+      135deg,
+      oklch(0.22 0.1 70) 0%,
+      oklch(0.28 0.12 65) 100%
+    );
+  }
+
+  .bg-midnight-musk {
+    background: linear-gradient(
+      135deg,
+      oklch(0.12 0.08 285) 0%,
+      oklch(0.16 0.1 290) 100%
+    );
+  }
+
+  .bg-sandal-essence {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.08 50) 0%,
+      oklch(0.22 0.1 55) 100%
+    );
+  }
+
+  .bg-lavender-calm {
+    background: linear-gradient(
+      135deg,
+      oklch(0.18 0.08 290) 0%,
+      oklch(0.22 0.1 295) 100%
+    );
+  }
+
+  .bg-fire-spice {
+    background: linear-gradient(
+      135deg,
+      oklch(0.2 0.12 25) 0%,
+      oklch(0.24 0.14 20) 100%
+    );
+  }
+}

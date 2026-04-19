@@ -1,0 +1,29 @@
+{
+  "overview": "A luxury 3D perfume brand showcase website with 11 fullscreen cinematic sections — one brand hero and ten individual perfume experiences. Each section features procedural Three.js 3D bottles, unique color themes, GSAP scroll animations, CSS particle systems, and glassmorphism cards. Pure brand storytelling with a dark gold aesthetic.",
+  "features": [
+    "11 fullscreen cinematic sections with smooth scroll transitions",
+    "Hero with 3D animated gold perfume bottle and particle system",
+    "10 unique perfume experiences with custom 3D bottles (procedural Three.js geometry)",
+    "Scroll-triggered fade-in animations via GSAP ScrollTrigger",
+    "Glassmorphism info cards with poetic descriptions and ingredient tags",
+    "Gold cursor glow ring and scroll progress bar",
+    "Animated loading screen",
+    "CSS particle systems per perfume theme",
+    "Unique background gradient per scent type",
+    "No e-commerce — pure brand storytelling"
+  ],
+  "category": "showcase",
+  "tags": [
+    "perfume",
+    "luxury",
+    "3d",
+    "three-js",
+    "gsap",
+    "cinematic",
+    "brand",
+    "showcase",
+    "dark-theme",
+    "gold"
+  ],
+  "last_updated": "2026-04-19T11:19:48.233Z"
+}
